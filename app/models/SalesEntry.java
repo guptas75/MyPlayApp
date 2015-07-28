@@ -86,8 +86,8 @@ public class SalesEntry implements Serializable {
     public static List<Object[]> generateReport() {
     	
     	String qs="select p.name, count(s.product_id), sum(s.amount) from sales s join product p on s.product_id=p.product_id group by p.product_id";
-        Query query= JPA.em().createNativeQuery(qs,Object[].class);
+        Query query= JPA.em().createNativeQuery(qs);
         List<Object[]> results= query.getResultList();
-        return results;   
+        return results;
       }
 }
