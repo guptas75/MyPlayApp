@@ -1,0 +1,25 @@
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product` (
+  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`product_id`)
+);
+
+--
+-- Table structure for table `sales`
+--
+
+DROP TABLE IF EXISTS `sales`;
+CREATE TABLE `sales` (
+  `sales_id` int(11) NOT NULL AUTO_INCREMENT,
+  `amount` decimal(7,2) DEFAULT '0.00',
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `product_id` int(11) NOT NULL,
+  PRIMARY KEY (`sales_id`),
+  KEY `FK_6y21n96lpwttpc9l4x070e8w1` (`product_id`),
+  CONSTRAINT `FK_6y21n96lpwttpc9l4x070e8w1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
+);
