@@ -16,7 +16,7 @@ public class Application extends Controller {
 
          String output = "Product Name\tTotal# sold\tTotal Amount\n";
             for (Object [] c : objList) {
-                output += c[0].toString() + "\t" + c[1].toString() + "\t" + c[2].toString() + "\n";
+                output += c[0].toString() + "\t\t" + c[1].toString() + "\t\t" + c[2].toString() + "\n";
             }
         return ok(output);
 //    	return ok("testess");
